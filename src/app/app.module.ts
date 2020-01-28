@@ -8,6 +8,13 @@ import { LoginComponent } from './login/login.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ImportdataComponent } from './importdata/importdata.component';
+import { ManagecompaniesComponent } from './managecompanies/managecompanies.component';
+import { ManageexchangeComponent } from './manageexchange/manageexchange.component';
+import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
+import { UserCompanySectorsComponent } from './user-company-sectors/user-company-sectors.component';
+import { UserCompareCompaniesComponent } from './user-compare-companies/user-compare-companies.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -16,13 +23,20 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ImportdataComponent,
+    ManagecompaniesComponent,
+    ManageexchangeComponent,
+    UpdateIpoComponent,
+    UserCompanySectorsComponent,
+    UserCompareCompaniesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

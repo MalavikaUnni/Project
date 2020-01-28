@@ -24,9 +24,7 @@
                     <input class="form-control" type="password" id="password" placeholder="Password">
                 </div>
 
-                <div class="form-group">
-                        <a href="UserHome.html" role="button" class="btn btn-info">Sign-Up</a>
-                </div>
+                <button class="btn btn-success" (click)="addUser()" [disabled]="!SignupForm.valid">Add User</button>
                 
             </form>
     </div>
