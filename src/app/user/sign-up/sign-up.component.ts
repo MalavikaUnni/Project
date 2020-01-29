@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +17,7 @@ SignupForm :FormGroup
       name:['',Validators.required],
       email:['',Validators.required],
       mobile:['',Validators.required],
-      username :['',Validators.required],
+      userid :['',Validators.required],
       password: ['',Validators.required]
 
   });

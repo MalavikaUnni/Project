@@ -1,8 +1,8 @@
 export class User{
     name:string;
     email:string;
-    phone:number;
-    username:string;
+    mobile:number;
+    userid:number;
     password:string;
 
 }

@@ -1,26 +1,42 @@
 {
-    "users": [
-      {
-        "name": "Malavika",
-        "email": "malavika@gmail.com",
-        "mobile": 3456564,
-        "username":"Malz",
-        "password":"password"
-      },
-      {
-        "name": "Merwin",
-        "email": "merwin@gmail.com",
-        "phone": 13234,
-        "username":"Mers",
-        "password":"password"
-      },
-      {
-        "id": 104,
-        "name": "Akshay",
-        "email": "akshay@gmail.com",
-        "phone": 78676,
-        "username":"Aks",
-        "password":"password"
-      }
-    ]
-  }
+  "users": [
+    {
+      "name": "Malavika",
+      "email": "malavika@gmail.com",
+      "mobile": 3456564,
+      "userid": 101,
+      "password": "password"
+    },
+    {
+      "name": "Merwin",
+      "email": "merwin@gmail.com",
+      "mobile": 13234,
+      "userid": 102,
+      "password": "password"
+    },
+    {
+      "name": "Tanu",
+      "email": "tanu@gmail.com",
+      "mobile": 73637,
+      "userid": 104,
+      "password": "password",
+      "id": 105
+    },
+    {
+      "name": "Hameem",
+      "email": "hameem@gmail.com",
+      "mobile": 8889,
+      "userid": "109",
+      "password": "password",
+      "id": 106
+    },
+    {
+      "name": "Jagadam",
+      "email": "jagadam@gmail.com",
+      "mobile": 3456,
+      "userid": "109",
+      "password": "pass",
+      "id": 107
+    }
+  ]
+}
