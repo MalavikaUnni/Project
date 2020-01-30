@@ -3,6 +3,10 @@
       <h3 class="display-4">Create New Account</h3>
       <form class=" w-50 container" [formGroup]="SignupForm"  (ngSubmit)="onSubmit()">
                 <div class="form-group">
+                    <label for="userid">Id</label>
+                    <input class="form-control" formControlName="id" type="text" id="id" placeholder="Enter id">
+                </div>
+                <div class="form-group">
                     <label for="name">Full Name</label>
                     <input class="form-control" formControlName="name" type="text" id="name" placeholder="Enter Fullname">
                 </div>
@@ -15,8 +19,8 @@
                     <input class="form-control" formControlName="mobile" type="number" id="mobile" placeholder="Enter Mobile Number ">
                 </div>
                 <div class="form-group">
-                    <label for="userid">User Id</label>
-                    <input class="form-control" formControlName="userid" type="text" id="userid" placeholder="Select a userid">
+                    <label for="username">User Name</label>
+                    <input class="form-control" formControlName="username" type="text" id="username" placeholder="Select a userid">
                 </div>
             
                 <div class="form-group">

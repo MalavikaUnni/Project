@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { ImportdataComponent } from './importdata/importdata.component';
-import { ManagecompaniesComponent } from './managecompanies/managecompanies.component';
+import { ManagecompaniesComponent } from './companies/managecompanies/managecompanies.component';
 import { ManageexchangeComponent } from './manageexchange/manageexchange.component';
 import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
 import { UserCompanySectorsComponent } from './user-company-sectors/user-company-sectors.component';
@@ -17,6 +17,8 @@ import { UserCompareCompaniesComponent } from './user-compare-companies/user-com
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './user/users/users.component';
 import { UpdateUserComponent } from './user/user-update/user-update.component';
+import { CompanyComponent } from './companies/company/company.component';
+import { AddCompanyComponent } from './companies/add-company/add-company.component';
 
 
 
@@ -33,7 +35,9 @@ import { UpdateUserComponent } from './user/user-update/user-update.component';
     UserCompanySectorsComponent,
     UserCompareCompaniesComponent,
     UsersComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    CompanyComponent,
+    AddCompanyComponent
   ],
   imports: [
     BrowserModule,

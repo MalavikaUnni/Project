@@ -1,11 +1,16 @@
 export class Signup {
+    id: number;
     name:string;
     email:string;
-    userid: number;
+    mobile:number;
     password: string;
-    constructor(userid:string , password :string)
+    constructor(id:number, name:string, email:string , mobile:number, password :string)
     {
-        this.userid=this.userid;
+        this.id= id;
+        this.name=name;
+        this.email=email;
+        this.mobile=mobile;
         this.password=password;
+    
     }
 }

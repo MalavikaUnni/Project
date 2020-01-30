@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/service/user.service';
 import {User} from '../../models/user';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-user',
-  templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.css']
+  templateUrl: './user-update.component.html',
+  styleUrls: ['./user-update.component.css']
 })
 export class UpdateUserComponent implements OnInit {
 updateUser :FormGroup;
@@ -15,15 +15,16 @@ updateUser :FormGroup;
 
   ngOnInit() {
     this.updateUser=this.formBuiler.group({
+      id:[],
       name:['',Validators.required],
       email:['',[Validators.required,Validators.email]],
       mobile:['',Validators.required],
-      userid:[],
+      username:['',Validators.required],
       password:['',Validators.required]
     });
-    const userid=localStorage.getItem('userId');
-    if(+userid > 0) {
-      this.userService.getUserById(+userid).subscribe(user=>{
+    const id=localStorage.getItem('userId');
+    if(+id > 0) {
+      this.userService.getUserById(+id).subscribe(user=>{
         this.updateUser.patchValue(user);
       });
     }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {User} from './models/user';
-import { USERS } from './models/user-mock';
+import {User} from '../models/user';
+import { USERS } from '../models/user-mock';
 import { ThrowStmt } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
@@ -21,17 +21,17 @@ saveUser(user:User) : Observable<User>
   return this.httpclient.post<User>(this.httpUrl, user);
 }
 
-deleteUser(userid:number) : Observable<User>
+deleteUser(id:number) : Observable<User>
 {
- return  this.httpclient.delete<User>(this.httpUrl + userid);
+ return  this.httpclient.delete<User>(this.httpUrl + id);
 }
 
 updateUserInfo(user:User) : Observable<User>
 {
-  return this.httpclient.put<User>(this.httpUrl + user.userid ,user);
+  return this.httpclient.put<User>(this.httpUrl + user.id ,user);
 }
-getUserById(userid:number) : Observable<User>
+getUserById(id:number) : Observable<User>
 {
-  return this.httpclient.get<User>(this.httpUrl + userid);
+  return this.httpclient.get<User>(this.httpUrl + id);
 }
 }

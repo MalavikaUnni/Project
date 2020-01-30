@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/service/user.service';
 import {User} from '../../models/user';
 import { Router } from '@angular/router';
 
@@ -20,14 +20,14 @@ export class UsersComponent implements OnInit {
 
 deleteUser(user:User)
 {
-  this.userService.deleteUser(user.userid).subscribe();
+  this.userService.deleteUser(user.id).subscribe();
   this.users=this.users.filter(u=> u!== user);
 } 
 updateUser(user:User)
 {
 localStorage.removeItem('userId');
-localStorage.setItem('userId',user.userid.toString());
-this.router.navigate(['update-user'])
+localStorage.setItem('userId',user.id.toString());
+this.router.navigate(['user-update'])
 }
 
 }
