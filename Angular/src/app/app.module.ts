@@ -19,6 +19,7 @@ import { UsersComponent } from './user/users/users.component';
 import { UpdateUserComponent } from './user/user-update/user-update.component';
 import { CompanyComponent } from './companies/company/company.component';
 import { AddCompanyComponent } from './companies/add-company/add-company.component';
+import { CompanyUpdateComponent } from './companies/company-update/company-update.component';
 
 
 
@@ -37,7 +38,8 @@ import { AddCompanyComponent } from './companies/add-company/add-company.compone
     UsersComponent,
     UpdateUserComponent,
     CompanyComponent,
-    AddCompanyComponent
+    AddCompanyComponent,
+    CompanyUpdateComponent
   ],
   imports: [
     BrowserModule,

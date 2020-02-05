@@ -1,28 +1,28 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h3 class="display-4">Add New Company</h3>
-      <form class=" w-50 container" [formGroup]="AddCompanyForm"  (ngSubmit)="onSubmit()">
+      <h3 class="display-4">Update Company</h3>
+      <form class=" w-50 container" [formGroup]="updateCompany" >
                 <div class="form-group">
                     <label for="id">Id</label>
-                    <input class="form-control" formControlName="id" type="text" id="id" placeholder="Enter id">
+                    <input class="form-control" formControlName="id" type="text" id="id" placeholder="Enter id" disabled>
                 </div>
                 <div class="form-group">
                     <label for="companyname">Company Name</label>
-                    <input class="form-control" formControlName="companyname" type="text" id="companyname" placeholder="Enter Company name">
+                    <input class="form-control" formControlName="companyname" type="text" id="companyname" placeholder="Enter Company name" disabled>
                 </div>
                 <div class="form-group" >
                     <label for="city">City</label>
                     <input class="form-control" formControlName="city" type="text" id="city" placeholder="Enter city">
                 </div>
                 <div class="form-group">
-                    <label for="turnover">Turn Over</label>
+                    <label for="turnover">TurnOver</label>
                     <input class="form-control" formControlName="turnover" type="number" id="turnover" placeholder="Enter Turnover ">
                 </div>
                 <div class="form-group">
-                    <label for="ceo">User Name</label>
+                    <label for="ceo">CEO</label>
                     <input class="form-control" formControlName="ceo" type="text" id="ceo" placeholder="Enter CEO Name">
                 </div>
-                <button class="btn btn-success" (click)="addCompany()" [disabled]="!AddCompanyForm.valid">Add Company</button>
+                <button class="btn btn-success" (click)="updateTheCompany()" [disabled]="!updateCompany.valid">Update</button>
                 
             </form>
     </div>

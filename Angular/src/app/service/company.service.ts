@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CompanyService {
-  httpUrl='http://localhost:3000/users/';
+  httpUrl='http://localhost:3000/companies/';
   companies=COMPANIES;
   constructor(private httpclient:HttpClient,private companyservice:CompanyService) { }
   getAllCompany() : Observable<Company[]>
@@ -21,5 +21,13 @@ saveCompany(company:Company) : Observable<Company>
 deletecompany(id:number) : Observable<Company>
 {
  return  this.httpclient.delete<Company>(this.httpUrl + id);
+}
+updateCompanyInfo(company:Company) : Observable<Company>
+{
+  return this.httpclient.put<Company>(this.httpUrl + company.id ,company);
+}
+getCompanyById(id:number) : Observable<Company>
+{
+  return this.httpclient.get<Company>(this.httpUrl + id);
 }
 }

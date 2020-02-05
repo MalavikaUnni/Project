@@ -7,6 +7,7 @@ import { UsersComponent } from './user/users/users.component';
 import{ UpdateUserComponent} from './user/user-update/user-update.component';
 import { AddCompanyComponent } from './companies/add-company/add-company.component';
 import { CompanyComponent } from './companies/company/company.component';
+import { CompanyUpdateComponent } from './companies/company-update/company-update.component';
 
 const routes: Routes = [
    { path: 'login', component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
    {path:'users' ,component:UsersComponent},
    {path : 'user-update', component:UpdateUserComponent},
    {path :'add-company',component:AddCompanyComponent},
-    {path:'company' ,component:CompanyComponent}
+    {path:'company' ,component:CompanyComponent},
+    {path:'company-update', component:CompanyUpdateComponent}
 ];
 
 @NgModule({

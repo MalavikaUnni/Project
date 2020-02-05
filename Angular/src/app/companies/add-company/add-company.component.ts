@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from 'src/app/service/company.service';
+import { CompanyService } from '../../service/company.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
@@ -24,10 +24,10 @@ AddCompanyForm :FormGroup
     
     }
     
-    addUser()
+    addCompany()
     {
-      this.companyService.saveUser(this.AddCompanyForm.value).subscribe( data =>{
-        console.log("User inserted Successfully")
+      this.companyService.saveCompany(this.AddCompanyForm.value).subscribe( data =>{
+        console.log("Company inserted Successfully")
       });
       }
     

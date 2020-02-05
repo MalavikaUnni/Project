@@ -23,4 +23,10 @@ deleteCompany(company:Company)
   this.companyService.deletecompany(company.id).subscribe();
   this.companies=this.companies.filter(c=> c!== company);
 } 
+updateCompany(company:Company)
+{
+localStorage.removeItem('companyId');
+localStorage.setItem('companyId',company.id.toString());
+this.router.navigate(['company-update'])
+}
 }
