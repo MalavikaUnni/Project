@@ -8,7 +8,7 @@ import { ThrowStmt } from '@angular/compiler';
   providedIn: 'root'
 })
 export class UserService {
-  httpUrl='http://localhost:3000/users/';
+  httpUrl='http://localhost:4000/users/';
  users=USERS;
   constructor(private httpclient:HttpClient,private userService:UserService) { }
 

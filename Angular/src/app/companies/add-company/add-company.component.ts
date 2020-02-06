@@ -10,7 +10,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class AddCompanyComponent implements OnInit {
 AddCompanyForm :FormGroup
-      constructor(private formBuilder :FormBuilder,private companyService:CompanyService) { }
+      constructor(private formBuilder :FormBuilder,private companyService:CompanyService,private router:Router) { }
     
       ngOnInit() {
         this.AddCompanyForm = this.formBuilder.group({
@@ -28,6 +28,7 @@ AddCompanyForm :FormGroup
     {
       this.companyService.saveCompany(this.AddCompanyForm.value).subscribe( data =>{
         console.log("Company inserted Successfully")
+       this.router.navigate(['/company']); 
       });
       }
     

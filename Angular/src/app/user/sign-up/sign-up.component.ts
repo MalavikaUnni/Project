@@ -10,7 +10,7 @@ import { UserService } from '../../service/user.service';
 })
 export class SignUpComponent implements OnInit {
 SignupForm :FormGroup
-  constructor(private formBuilder :FormBuilder,private userService :UserService) { }
+  constructor(private formBuilder :FormBuilder,private userService :UserService,private router:Router) { }
 
   ngOnInit() {
     this.SignupForm = this.formBuilder.group({
@@ -35,5 +35,6 @@ addUser()
 
 onSubmit() {
   console.log(this.SignupForm.value);
+  this.router.navigate(['/user-home'])
 }
 }

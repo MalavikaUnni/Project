@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
 
   ngOnInit() {
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.loginForm.value);
+    this.router.navigate(['/user-home'])
   }
 
 }

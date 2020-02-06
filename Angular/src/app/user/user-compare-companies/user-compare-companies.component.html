@@ -1,0 +1,24 @@
+<div id="body" class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <form [formGroup]='comparecompany' class="form-group border p-5 border-curved mt-5" >
+            <p class="h1 text-muted text-uppercase text-center mb-4">Compare Company</p>
+         
+            <label for="sector"> Select Sector:</label>
+            <select class="form-control " id="sector" formControlName="sector">
+                <option>IT <a href="IT"></a></option>
+                <option>Banking<a href="Banking"></a></option>
+                <option>Trading<a href="Trading"></a></option>
+                <option>Agriculture<a href="Agriculture"></a></option>
+                <option>Others..<a href="Others.."></a></option>
+              </select>
+            
+            <label for="companyname">Company Name:</label>
+            <input type="text" class="form-control" placeholder="Name of Company" formControlName="companyname" id="companyname">
+           
+            <button class="btn btn-dark form-control" (click)="compareTheCompany()" [disabled]="!comparecompany.valid">Submit</button>
+          </form>
+</div>
+</div>
+</div>

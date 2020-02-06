@@ -1,7 +1,7 @@
 <header style="color: rgb(21, 37, 54);" class="text-center"><h2>Stock Market Charting</h2></header>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <form class=" w-50 container" [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+            <form class=" w-50 container" [formGroup]="loginFormadmin"  (ngSubmit)="onSubmit()">
 
                     <div class="form-group">
                         <label for="username">User Name</label>
@@ -17,10 +17,7 @@
                     <div class="form-group">
                         <button type="submit" onsubmit="onSubmit()" class="btn  btn-dark px-5 mx-3">Submit</button>
                     </div>
-                    <div class="form-group">
-                             New User?
-                            <a href="sign-up">Create New Account</a>
-                    </div>
+                    
                     
                 </form>
         </div>

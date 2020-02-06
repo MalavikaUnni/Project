@@ -1,13 +1,39 @@
-
-
-<nav class="navbar navbar-expand-md bg-secondary navbar-dark ">
+<header>
+    <div class="bg-dark-50">
+        <div class="container-fluid w-100">
+            <H2 class="text-center display-3 text-dark my-5">STOCK MARKET CHARTING</H2>
+        </div>
+    </div>
+    <nav class="navbar  navbar-expand-md navbar-dark bg-dark">
+        <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div id="navbar1" class="collapse navbar-collapse ml-auto">
+            <ul class="navbar-nav justify-content-around w-100 text-center">
+                <li class="nav-item"><a [routerLink]="['/home']" class="nav-link ">HOME</a></li>
+                <li class="nav-item"><a [routerLink]="['/admin-home']" class="nav-link ">ADMIN</a></li>
+                <li class="nav-item"><a [routerLink]="['/user-home']" class="nav-link ">USER</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+ <router-outlet></router-outlet>
+</main>
+<footer class="page-footer font-small blue bg-dark text-light">
+    <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
+        <a href="#">Stock Market Charting</a>
+    </div>
+</footer>
+<!-- <nav class="navbar navbar-expand-md bg-secondary navbar-dark ">
   <div>
       <ul class="navbar-nav">
           <li class="nav-item">
               <a routerLink="home" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-              <a routerLink="" class="nav-link">About</a>
+              <a routerLink="admin-home" class="nav-link">About</a>
           </li>
           <li class="nav-item">
               <a routerLink="sign-up" class="nav-link">SignUp</a>
@@ -29,7 +55,7 @@
             
       </ul>
   </div>
-</nav>
+</nav> -->
 
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
