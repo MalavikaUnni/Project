@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 class="display-4">Update Company</h3>
+      <form class=" w-50 container" [formGroup]="updateCompany" >
+                <div class="form-group">
+                    <label for="id">Id</label>
+                    <input class="form-control" formControlName="id" type="text" id="id" placeholder="Enter id" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="name">Company Name</label>
+                    <input class="form-control" formControlName="name" type="text" id="name" placeholder="Enter Company name" >
+                </div>
+                <div class="form-group" >
+                    <label for="city">City</label>
+                    <input class="form-control" formControlName="city" type="text" id="city" placeholder="Enter city">
+                </div>
+
+
+                <!-- <div class="form-group" >
+                    <label for="sector">City</label>
+                    <input class="form-control" formControlName="sector" type="text" id="sector" placeholder="Enter sector">
+                </div> -->
+                <div class="form-group">
+                    <label for="turnOver">TurnOver</label>
+                    <input class="form-control" formControlName="turnOver" type="number" id="turnOver" placeholder="Enter Turnover ">
+                </div>
+                <div class="form-group">
+                    <label for="ceoName">CEO</label>
+                    <input class="form-control" formControlName="ceoName" type="text" id="ceoName" placeholder="Enter CEO Name">
+                </div>
+                <button class="btn btn-dark" (click)="updateTheCompany()" [disabled]="!updateCompany.valid">Update</button>
+                
+            </form>
+    </div>
+    </div>

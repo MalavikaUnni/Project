@@ -1,0 +1,23 @@
+
+    <table class="table">
+        <tr>
+        
+            <th>ID</th>
+            <th>Exchange Name</th>
+            <th>Contact Address</th>
+            <th>Brief</th>
+            <th>Remarks</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tr *ngFor="let exchang of exchanges">
+            <td>{{exchang.id}}</td>
+            <td>{{exchang.exchangeName}}</td>
+            <td>{{exchang.contactAddress}}</td>
+            <td>{{exchang.brief}}</td>
+            <td>{{exchang.remarks}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteExchange(exchang)">Delete</button>
+                <button class="btn btn-primary" (click) ="updateExchange(exchang)">Update</button>
+            </td>
+        </tr>
+    </table>

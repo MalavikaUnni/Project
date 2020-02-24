@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 class="display-4 text-center text-bold text-dark"><b>Add New Exchange</b></h3>
+      <form class=" w-50 container" [formGroup]="AddExchangeForm"  (ngSubmit)="addExchange()">
+        
+                <div class="form-group">
+                    <label for="exchangeName">Stock Exchange Name</label>
+                    <input class="form-control" formControlName="exchangeName" type="text" id="exchangeName" placeholder="Enter stock exchange name">
+                </div>
+                <div class="form-group">
+                    <label for="contactAddress"> Contact Address</label>
+                    <input class="form-control" formControlName="contactAddress" type="text" id="address" placeholder="Enter Address">
+                </div>
+                <div class="form-group" >
+                    <label for="brief">Brief</label>
+                    <input class="form-control" formControlName="brief" type="text" id="brief" placeholder="say something about this stock exchange">
+                </div>
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <input class="form-control" formControlName="remarks" type="text" id="remarks" placeholder="Enter Remarks">
+                </div>
+                <div >
+                    <button class="btn btn-dark" [disabled]="!AddExchangeForm.valid">Add Exchange</button>
+                </div>
+                
+            </form>
+    </div>
+    </div>
