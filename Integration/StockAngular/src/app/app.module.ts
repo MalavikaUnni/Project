@@ -30,6 +30,8 @@ import { ListExchangeComponent } from './admin/list-exchange/list-exchange.compo
 import { UpdateExchangeComponent } from './admin/update-exchange/update-exchange.component';
 import { AddStockPriceComponent } from './admin/add-stock-price/add-stock-price.component';
 import { ListStockPriceComponent } from './admin/list-stock-price/list-stock-price.component';
+import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
+import { ActivateComponent } from './activate/activate.component';
 
 
 
@@ -60,7 +62,9 @@ import { ListStockPriceComponent } from './admin/list-stock-price/list-stock-pri
     ListExchangeComponent,
     UpdateExchangeComponent,
     AddStockPriceComponent,
-    ListStockPriceComponent
+    ListStockPriceComponent,
+    UpdateStockPriceComponent,
+    ActivateComponent
     
   ],
   imports: [

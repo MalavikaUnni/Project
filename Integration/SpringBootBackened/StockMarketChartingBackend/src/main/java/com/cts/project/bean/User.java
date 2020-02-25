@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -25,7 +26,9 @@ public class User implements Serializable{
 	String username;
 	String password;
 	
-
+	@Transient
+    String regStatus;
+	
 	
 	public User()
 	{
@@ -105,7 +108,14 @@ public class User implements Serializable{
 	}
 
 
+	public String getRegStatus() {
+		return regStatus;
+	}
 
+
+	public void setRegStatus(String regStatus) {
+		this.regStatus = regStatus;
+	}
 
 
 	@Override

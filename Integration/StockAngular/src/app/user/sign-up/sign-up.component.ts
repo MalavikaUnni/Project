@@ -29,6 +29,7 @@ addUser()
 {
   this.userService.saveUser(this.SignupForm.value).subscribe( data =>{
     console.log("User inserted Successfully")
+    console.log('registration status '+ data.regStatus)
     this.router.navigate(['/admin-home'])
   });
   }
@@ -37,6 +38,7 @@ addUser()
 onSubmit() {
   
   console.log(this.SignupForm.value);
+
   //this.router.navigate(['/admin-home'])
 }
 }

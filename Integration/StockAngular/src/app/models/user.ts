@@ -5,5 +5,6 @@ export class User{
     phone:number;
     username:string;
     password:string;
+    regStatus:string;
 
 }

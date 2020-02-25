@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
-import { USERS } from '../models/user-mock';
+
 import { ThrowStmt } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   httpUrl = 'http://localhost:8002/user/';
-  users = USERS;
+ 
   constructor(private httpclient: HttpClient, private userService: UserService) { }
 
   getAllUser(): Observable<User[]> {
