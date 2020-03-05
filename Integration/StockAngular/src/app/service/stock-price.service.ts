@@ -8,7 +8,7 @@ import { StockPrice } from '../models/stockPrice';
 })
 export class StockPriceService {
 
-  httpUrl = 'http://localhost:8002/stockPrice/';
+  httpUrl = 'http://localhost:8008/stockPrice/';
   
   constructor(private httpclient: HttpClient, private stockPriceService: StockPriceService) { }
 

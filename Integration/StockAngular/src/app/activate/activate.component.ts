@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-activate',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivateComponent implements OnInit {
 
-  constructor() { }
-
+  msg;
+  constructor(@Inject(UserService) private service) { }
   ngOnInit() {
+    this.checkActivation()
   }
+  checkActivation() {
+    var urlad = document.URL
+    var strarr = urlad.split("?")
+    var str = strarr[1]
+    str = str.substring(0, str.length - 1);
+    this.service.serviceActivation({ email: str }).subscribe(dt => {
+      if (dt.result == 1) {
+        this.msg = "activation successfull"
+      }
+      else {
+        this.msg = "already activated"
+      }
+    });
+  }
+  
 
 }

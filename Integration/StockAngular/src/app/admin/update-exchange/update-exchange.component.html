@@ -1,7 +1,8 @@
-<div class="jumbotron jumbotron-fluid">
+<!-- <div class="jumbotron jumbotron-fluid"> -->
+    <main>
     <div class="container">
-        <h3 class="display-4 text-center text-bold text-dark"><b>Update Exchange</b></h3>
-        <form class=" w-50 container" [formGroup]="updateExchangeForm" (ngSubmit)="updateExchange()">
+        <h3 class="display-4 text-center font-weight-bold text-muted"><b>Update Exchange</b></h3>
+        <form class=" w-50 container  p-5 rounded card" [formGroup]="updateExchangeForm" (ngSubmit)="updateExchange()">
 
             <div class="form-group">
                 <label for="id">Id</label>
@@ -28,9 +29,10 @@
                 <input class="form-control" formControlName="remarks" type="text" id="remarks">
             </div>
             <div>
-                <button class="btn btn-dark" [disabled]="!updateExchangeForm.valid">update Exchange</button>
+                <button class="btn btn-dark btn-block" [disabled]="!updateExchangeForm.valid">Update Exchange</button>
             </div>
 
         </form>
     </div>
-</div>
+    </main>
+<!-- </div> -->

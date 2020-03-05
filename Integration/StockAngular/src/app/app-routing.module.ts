@@ -24,6 +24,9 @@ import { UpdateExchangeComponent } from './admin/update-exchange/update-exchange
 import { AddStockPriceComponent } from './admin/add-stock-price/add-stock-price.component';
 import { ListStockPriceComponent } from './admin/list-stock-price/list-stock-price.component';
 import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
+import { ActivateComponent } from './activate/activate.component';
+import { AboutUsComponent } from './home/about-us/about-us.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -49,7 +52,9 @@ const routes: Routes = [
   { path: 'update-exchange', component: UpdateExchangeComponent },
   {path:'add-stock-price',component:AddStockPriceComponent},
   {path:'list-stock-price',component:ListStockPriceComponent},
-  {path:'update-stock-price',component:UpdateStockPriceComponent}
+  {path:'update-stock-price',component:UpdateStockPriceComponent},
+  {path:'activate',component:ActivateComponent},
+  {path:'about-us',component:AboutUsComponent}
 
 ];
 

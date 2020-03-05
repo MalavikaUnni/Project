@@ -8,7 +8,6 @@ import { LoginComponent } from './login/login.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
-import { ManagecompaniesComponent } from './admin/managecompanies/managecompanies.component';
 import { ManageexchangeComponent } from './admin/manageexchange/manageexchange.component';
 import { UpdateIpoComponent } from './admin/update-ipo/update-ipo.component';
 import { UserCompanySectorsComponent } from './user/user-company-sectors/user-company-sectors.component';
@@ -32,6 +31,7 @@ import { AddStockPriceComponent } from './admin/add-stock-price/add-stock-price.
 import { ListStockPriceComponent } from './admin/list-stock-price/list-stock-price.component';
 import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
 import { ActivateComponent } from './activate/activate.component';
+import { AboutUsComponent } from './home/about-us/about-us.component';
 
 
 
@@ -42,7 +42,6 @@ import { ActivateComponent } from './activate/activate.component';
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    ManagecompaniesComponent,
     ManageexchangeComponent,
     UpdateIpoComponent,
     UserCompanySectorsComponent,
@@ -64,7 +63,8 @@ import { ActivateComponent } from './activate/activate.component';
     AddStockPriceComponent,
     ListStockPriceComponent,
     UpdateStockPriceComponent,
-    ActivateComponent
+    ActivateComponent,
+    AboutUsComponent
     
   ],
   imports: [

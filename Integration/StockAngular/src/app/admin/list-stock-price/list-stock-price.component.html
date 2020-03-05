@@ -1,18 +1,19 @@
+<main>
 <div class="text-center">
     <h3>STOCK PRICE DETAILS</h3>
 </div>
 <br>
 <br>
-<div>
-    <table class="table" border="1">
-        <tr>
-            <th>Id</th>
-            <th>Company Code</th>
-            <th>Stock Exchange</th>
-            <th>Current Price</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Actions</th>
+<div class="table-responsive container">
+    <table class="table" border="2">
+        <tr class="text-danger">
+            <th>ID</th>
+            <th>COMPANY CODE</th>
+            <th>STOCK EXCHANGE</th>
+            <th>CURRENT PRICE</th>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>ACTIONS</th>
         </tr>
         <tr *ngFor="let stock of stockPrices">
             <td>{{stock.id}}</td>
@@ -28,3 +29,9 @@
         </tr>  
     </table>
 </div>
+
+<div class="text-center">
+    <a [routerLink]="['/add-stock-price']" class="btn btn-dark text-light border-light text-center "><i
+            class="fa fa-upload fa-lg" aria-hidden="true"></i>  ADD NEW STOCKPRICE</a>
+            </div>
+</main>

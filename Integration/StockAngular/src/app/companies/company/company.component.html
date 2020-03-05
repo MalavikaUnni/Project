@@ -1,13 +1,16 @@
+<main>
+<h3 class="text-center">Company Details</h3>
+<div class="table-responsive container">
 <table class="table" border="2">
-    <tr>
+    <tr class="text-danger">
     
-        <th>id</th>
-        <th>companyname</th>
+        <th>ID</th>
+        <th>COMPANY NAME</th>
         <th>city</th>
         <!-- <th>sector</th> -->
-        <th>turnover</th>
-        <th>ceo</th>
-        <th>Actions</th>
+        <th>TURNOVER</th>
+        <th>CEO</th>
+        <th>ACTIONS</th>
     </tr>
     <tr *ngFor="let company of companies">
         <td>{{company.id}}</td>
@@ -22,3 +25,12 @@
     </td>
     </tr>
 </table>
+</div>
+
+
+<div class="text-center">
+    <a [routerLink]="['/add-company']" class="btn btn-dark text-light border-light text-center "><i
+            class="fa fa-building fa-lg" aria-hidden="true"></i>  ADD NEW COMPANY</a>
+
+</div>
+</main>

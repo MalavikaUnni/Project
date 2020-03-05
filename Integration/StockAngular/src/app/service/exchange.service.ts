@@ -8,7 +8,7 @@ import { exchange } from '../models/exchange';
 })
 export class ExchangeService {
 
-  httpUrl = 'http://localhost:8002/stockExchange/';
+  httpUrl = 'http://localhost:8007/stockExchange/';
 
   
   constructor(private httpClient: HttpClient, private exchangeService: ExchangeService) { }

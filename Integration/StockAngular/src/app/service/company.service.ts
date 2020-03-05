@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CompanyService {
-  httpUrl='http://localhost:8002/company/';
+  httpUrl='http://localhost:8003/company/';
   companies=COMPANIES;
   constructor(private httpclient:HttpClient,private companyservice:CompanyService) { }
   getAllCompany() : Observable<Company[]>

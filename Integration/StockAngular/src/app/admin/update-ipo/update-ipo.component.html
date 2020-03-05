@@ -1,7 +1,8 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron"> -->
+    <main>
     <div class="container">
-        <h3 class="display-4 text-center text-dark"><b>Add IPO</b></h3>
-        <form class=" w-50 container" [formGroup]="updateIpoForm">
+        <h3 class="display-4 text-center font-weight-bold text-muted"><b>Update IPO</b></h3>
+        <form class=" w-50 container  p-5 rounded card" [formGroup]="updateIpoForm">
 
             <div class="form-group">
                 <label for="id">id</label>
@@ -40,8 +41,9 @@
                 <input class="form-control" formControlName="remarks" type="text" id="remarks"
                     placeholder="Enter address">
             </div>
-            <button class="btn btn-success" (click)="updateIpo()" [disabled]="!updateIpoForm.valid">Update</button>
+            <button class="btn btn-dark" (click)="updateIpo()" [disabled]="!updateIpoForm.valid">Update</button>
 
         </form>
     </div>
-</div>
+    </main>
+<!-- </div> -->

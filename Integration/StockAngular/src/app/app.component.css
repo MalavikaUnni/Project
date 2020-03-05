@@ -1,9 +1,5 @@
-.jumbotron-short{
-    max-height: 10vh;
-}
-main{
-    min-height: 100vh;
-    background-image: url(../assets/background2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.display-6
+{
+    font-size: 25px;
 }
