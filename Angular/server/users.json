@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 101,
+      "name": "Malavika",
+      "email": "malavika@gmail.com",
+      "phone": 3456564,
+      "username": "101",
+      "password": "password"
+    },
+    {
+      "id": 102,
+      "name": "Merwin",
+      "email": "merwin@gmail.com",
+      "phone": 13234,
+      "username": "102",
+      "password": "password"
+    },
+    {
+      "id": 104,
+      "name": "TanuSree",
+      "email": "tanu@gmail.com",
+      "phone": 73637,
+      "username": "104",
+      "password": "password"
+    },
+    {
+      "id": 109,
+      "name": "Hameem",
+      "email": "hameem@gmail.com",
+      "phone": 8889,
+      "username": "109",
+      "password": "password"
+    },
+    {
+      "id": 107,
+      "name": "Jagadam Sairam",
+      "email": "jagadam123@gmail.com",
+      "phone": 3456,
+      "username": "107",
+      "password": "pass"
+    },
+    {
+      "id": "188",
+      "name": "Aneena Thomas",
+      "email": "anu@gmail.com",
+      "phone": 878676,
+      "username": "anu",
+      "password": "anu"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<main>
+<h2 class="text-center">IPO DETAILS</h2>
+<div class="table-responsive container">
+    <table class="table" border="2">
+        <tr class="text-danger">
+            <th>ID</th>
+            <th>COMPANY NAME</th>
+            <th>STOCK EXCHANGE</th>
+            <th>PRICE PER SHARE</th>
+            <th>NO OF SHARES</th>
+            <th>DATE</th>
+            <th>REMARKS</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tr *ngFor="let ipo of ipos">
+            <td>{{ipo.id}}</td>
+            <td>{{ipo.companyName}}</td>
+            <td>{{ipo.stockExchange}}</td>            
+            <td>{{ipo.pricePerShare}}</td>
+            <td>{{ipo.noOfShares}}</td>
+            <td>{{ipo.openDateTime}}</td>
+            <td>{{ipo.remarks}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteIpo(ipo)">Delete</button>
+                <button class="btn btn-dark" (click)="updateIpo(ipo)">Update</button>
+            </td>
+        </tr>  
+    </table>
+</div>
+
+
+<div class="text-center">
+    <a [routerLink]="['/add-ipo']" class="btn btn-dark text-light border-light text-center "><i
+            class="fa fa-upload fa-lg" aria-hidden="true"></i>  ADD NEW IPO</a>
+
+</div>
+</main>

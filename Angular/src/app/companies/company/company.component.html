@@ -1,0 +1,36 @@
+<main>
+<h3 class="text-center">Company Details</h3>
+<div class="table-responsive container">
+<table class="table" border="2">
+    <tr class="text-danger">
+    
+        <th>ID</th>
+        <th>COMPANY NAME</th>
+        <th>city</th>
+        <th>sector</th>
+        <th>TURNOVER</th>
+        <th>CEO</th>
+        <th>ACTIONS</th>
+    </tr>
+    <tr *ngFor="let company of companies">
+        <td>{{company.id}}</td>
+        <td>{{company.name}}</td>
+        <td>{{company.city}}</td>
+        <td>{{company.sector}}</td>
+        <td>{{company.turnOver}}</td>
+        <td>{{company.ceoName}}</td>
+        <td><button class="btn btn-danger" (click)="deleteCompany(company)">Delete</button>
+        <button class="btn btn-dark" (click) ="updateCompany(company)">Update</button>
+    
+    </td>
+    </tr>
+</table>
+</div>
+
+
+<div class="text-center">
+    <a [routerLink]="['/add-company']" class="btn btn-dark text-light border-light text-center "><i
+            class="fa fa-building fa-lg" aria-hidden="true"></i>  ADD NEW COMPANY</a>
+
+</div>
+</main>

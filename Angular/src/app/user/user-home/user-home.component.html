@@ -1,0 +1,53 @@
+<main>
+
+
+  <div class="container">
+    <div class="row justify-content-center my-5">
+      <div class="card-deck">
+
+        <div class="col-md">
+          <div class="card shadow text-center card-pop" style="width:20rem;">
+            <a [routerLink]="['/user-compare-companies']" class="bg-secondary p-4 card-hover text-info"> <i
+                class="fas fa-users fa-10x"></i></a>
+            <div class=" bg-light">
+              <h5 class="card-title font-weight-bold text-muted">Compare Companies</h5>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md">
+          <div class="card shadow text-center card-pop" style="width:20rem;">
+            <a [routerLink]="['/user-compare-sectors']" class="bg-secondary p-4 card-hover text-info"> <i
+                class="fas  fa-upload fa-10x"></i></a>
+            <div class=" bg-light">
+              <h5 class="card-title font-weight-bold text-muted">Compare Sectors</h5>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md">
+          <div class="card shadow text-center card-pop" style="width:20rem;">
+            <a [routerLink]="['/charts']" class="bg-secondary p-4 card-hover text-info"> <i
+                class="fas  fa-upload fa-10x"></i></a>
+            <div class=" bg-light">
+              <h5 class="card-title font-weight-bold text-muted">Charts</h5>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class=" text-center">
+    <a [routerLink]="['/user-profile']" class="btn btn-info ">VIEW PROFILE</a>
+    <!-- <a [routerLink]="['/user-compare-sectors']" class="list-group-item list-group-item-action list-group-item-dark">COMPARE SECTOR</a> -->
+  </div> 
+</main>

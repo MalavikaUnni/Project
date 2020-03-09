@@ -1,0 +1,28 @@
+<main>
+<div id="body" class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <form [formGroup]='comparecompany' class="form-group border p-5 border-curved mt-5" >
+            <p class="h1 text-muted text-uppercase text-center mb-4">Compare Company</p>
+         
+           <div class="form-group">
+            <label for="company"> Select Company:</label>
+            <select class="form-control " name="company" formControlName="company">
+                <option *ngFor="let comp of companyList" value={{comp.id}}>{{comp.name}}</option>
+              </select>
+           </div>
+           <div class="form-group">
+            <label for="company2"> Select Company:</label>
+            <select class="form-control " id="company2" formControlName="company2">
+                <option *ngFor="let comp of companyList" value={{comp.id}}>{{comp.name}}</option>
+              </select>
+           </div>
+          <div class="text-center"><br>
+            <button class="btn btn-dark btn-block" (click)="compareTheCompany()" [disabled]="!comparecompany.valid">Compare</button>
+          </div>
+          </form>
+</div>
+</div>
+</div>
+</main>

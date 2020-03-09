@@ -1,0 +1,35 @@
+<main>
+    <h2 class="text-center">User Details</h2>
+    <div class="table-responsive container">
+        <table class="table" border="2">
+            <tr class="text-danger">
+
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>username</th>
+                <th>password</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                    <button class="btn btn-dark" (click)="updateUser(user)">Update</button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="text-center">
+        <a [routerLink]="['/sign-up']" class="btn btn-dark text-light border-light text-center "><i
+                class="fa fa-user fa-lg" aria-hidden="true"></i>  ADD NEW USER</a>
+
+    </div>
+</main>

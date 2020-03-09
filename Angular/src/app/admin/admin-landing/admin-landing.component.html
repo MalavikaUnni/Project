@@ -1,0 +1,38 @@
+<main>
+    <nav class="navbar navbar-expand-md navbar-light">
+
+        <button type="button" class="navbar-toggler mr-auto" data-toggle="collapse" data-target="#navbar2">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar2">
+            <ul class="navbar-nav  text-light ">
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./users']" class="nav-link text-dark "><i class="fa fa-home fa-lg"
+                            aria-hidden="true"></i>ManageUser &nbsp;</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./import-data']" class="nav-link text-dark"><i class="fa fa-user-plus fa-lg"
+                            aria-hidden="true"></i>Import Data &nbsp;</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./company']" class="nav-link text-dark "><i class="fa fa-user fa-lg"
+                            aria-hidden="true"></i>Manage Company &nbsp;</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-ipo']" class="nav-link text-dark"><i class="fa fa-book fa-lg"
+                            aria-hidden="true"></i>Manage IPO</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-exchange']" class="nav-link text-dark"><i class="fa fa-book fa-lg"
+                            aria-hidden="true"></i>Manage Exchange</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-stock-price']" class="nav-link text-dark"><i class="fa fa-book fa-lg"
+                            aria-hidden="true"></i>Manage StockPrice</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+</main>
