@@ -27,7 +27,7 @@ export class ManageexchangeComponent implements OnInit {
 
   addExchange() {
     this.exchangeService.saveExchange(this.AddExchangeForm.value).subscribe(data => {
-      console.log("Company inserted Successfully");
+     // console.log("Company inserted Successfully");
       this.router.navigate(['/list-exchange']);
     });
   }

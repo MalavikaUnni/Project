@@ -29,23 +29,21 @@ import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ChartsComponent } from './charts/charts.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { AdminLandingComponent } from './admin/admin-landing/admin-landing.component';
+import { UpdateProfileComponent } from './user/update-profile/update-profile.component';
+import { UserLandingComponent } from './user/user-landing/user-landing.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
+  { path: 'home',component:HomeComponent},
   { path: 'sign-up', component: SignUpComponent },
   { path: 'common-login', component: CommonLoginComponent },
-  { path: 'user-home', component: UserHomeComponent },
-  { path: 'user-compare-companies', component: UserCompareCompaniesComponent },
-  { path: 'user-compare-sectors', component: UserCompanySectorsComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'activate', component: ActivateComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'charts', component: ChartsComponent },
-  { path: 'user-profile', component: UserProfileComponent },
-  {
-    path: 'admin-landing', component: AdminLandingComponent, children: [
+  { path: 'admin-landing', component: AdminLandingComponent, children: [
       { path: '', redirectTo: 'admin-home', pathMatch: 'full' },
       { path: 'admin-home', component: AdminHomeComponent },
       { path: 'company', component: CompanyComponent },
@@ -65,6 +63,18 @@ const routes: Routes = [
       { path: 'update-stock-price', component: UpdateStockPriceComponent }
 
     ]
+  },
+
+  { path: 'user-landing', component: UserLandingComponent, children: [
+    { path: '', redirectTo: 'user-home', pathMatch: 'full' },
+    { path: 'user-home', component: UserHomeComponent },
+    { path: 'user-compare-companies', component: UserCompareCompaniesComponent },
+    { path: 'user-compare-sectors', component: UserCompanySectorsComponent },
+    { path: 'charts', component: ChartsComponent },
+    { path: 'user-profile', component: UserProfileComponent },
+    { path:'update-profile',component:UpdateProfileComponent},
+    { path: 'change-password',component:ChangePasswordComponent}
+  ]
   }
 
 ];

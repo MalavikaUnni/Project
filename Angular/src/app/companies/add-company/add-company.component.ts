@@ -28,13 +28,13 @@ AddCompanyForm :FormGroup
     addCompany()
     {
       this.companyService.saveCompany(this.AddCompanyForm.value).subscribe( data =>{
-        console.log("Company inserted Successfully")
+        //console.log("Company inserted Successfully")
        this.router.navigate(['/company']); 
       });
       }
     
     
     onSubmit() {
-      console.log(this.AddCompanyForm.value);
+      //console.log(this.AddCompanyForm.value);
     }
     }

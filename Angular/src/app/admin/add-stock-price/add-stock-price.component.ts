@@ -24,11 +24,11 @@ export class AddStockPriceComponent implements OnInit {
     addStockPrice()
     {
       this.StockService.saveStockPrice(this.AddStockForm.value).subscribe( data =>{
-        console.log("Company inserted Successfully")
+        //console.log("Company inserted Successfully")
        this.router.navigate(['/admin-home']); 
       });
       }
     onSubmit() {
-      console.log(this.AddStockForm.value);
+      //console.log(this.AddStockForm.value);
     }
 }

@@ -16,7 +16,7 @@ export class ListExchangeComponent implements OnInit {
   ngOnInit() {
     this.exchangeService.getAllExchange().subscribe((exch: exchange[]) => {
       this.exchanges = exch;
-      console.log(exch);
+      //console.log(exch);
 
     });
   }

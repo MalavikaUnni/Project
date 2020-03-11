@@ -8,7 +8,8 @@ import { ThrowStmt } from '@angular/compiler';
   providedIn: 'root'
 })
 export class UserService {
-  httpUrl = 'http://localhost:8000/user/';
+  httpUrl = 'http://localhost:8765/user-service/user/';
+
  
   constructor(private httpclient: HttpClient, private userService: UserService) { }
 
@@ -16,7 +17,7 @@ export class UserService {
     return this.httpclient.get<User[]>(this.httpUrl);
   }
   saveUser(user: User): Observable<User> {
-    return this.httpclient.post<User>(this.httpUrl, user);
+    return this.httpclient.post<User>('http://localhost:8765/user-service/usersignup', user);
   }
 
   deleteUser(id: number): Observable<User> {
@@ -30,8 +31,8 @@ export class UserService {
     return this.httpclient.get<User>(this.httpUrl + id);
   }
 
-  serviceActivation(obj){
-    return this.httpclient.put('http://localhost:8002/activate/',obj)
+  serviceActivation(email:string){
+    return this.httpclient.get(this.httpUrl+"activate/"+email);
   }
 
 

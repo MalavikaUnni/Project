@@ -20,13 +20,17 @@ export class AuthService {
     // send the request
     return this.http.get(url, { headers }).pipe(
       // success function
-      map(successData => {
-        console.log("success ")
+      map((data: User) => {
+        console.log(data);
         sessionStorage.setItem("username", username);
-        // save the token
         sessionStorage.setItem("token", authenticationToken);
-        return successData;
+        sessionStorage.setItem("userType",data.userType==="ROLE_ADMIN" ? "admin":"user"); 
+        return data;
       }),
+      map(error => {
+        return error;
+      }),
+   
       // failure function
       map(failureData => {
         // console message 
@@ -53,9 +57,11 @@ export class AuthService {
   logout() {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem("token")
+    sessionStorage.removeItem("userType")
+     sessionStorage.removeItem("userId")
   }
   getUserDetails(): string {
-    let user = sessionStorage.getItem('usename');
+    let user = sessionStorage.getItem('username');
     return user;
   }
 }

@@ -24,7 +24,7 @@ export class ImportDataComponent implements OnInit {
     uploadSheetData.append("stocksSheet",this.file,this.file.name);
     this.uploadService.uploadStocksSheet(uploadSheetData).subscribe(
       data=>{
-        console.log("Uploaded");
+       // console.log("Uploaded");
       }
     );
     

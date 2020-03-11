@@ -11,6 +11,7 @@ public class UserDTO {
 	private long phone;
 	private String username;
 	private String password;
+	private String userType;
 	private boolean enabled;
 	
 	
@@ -20,7 +21,7 @@ public class UserDTO {
 	}
 
 
-	public UserDTO(Integer id, String name, String email, long phone, String username, String password,
+	public UserDTO(Integer id, String name, String email, long phone, String username, String password,String user_type,
 			boolean enabled) {
 		super();
 		this.id = id;
@@ -30,6 +31,7 @@ public class UserDTO {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
+		this.userType=user_type;
 	}
 
 
@@ -101,13 +103,28 @@ public class UserDTO {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+	
+	
+
+
+	public String getUserType() {
+		return userType;
+	}
+
+
+	public void setUserType(String user_type) {
+		this.userType = user_type;
+	}
 
 
 	@Override
 	public String toString() {
 		return "UserDTO [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", username="
-				+ username + ", password=" + password + ", enabled=" + enabled + "]";
+				+ username + ", password=" + password + ", user_type=" + userType + ", enabled=" + enabled + "]";
 	}
+
+
+	
 	
 	
 

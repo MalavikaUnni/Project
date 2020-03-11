@@ -14,8 +14,16 @@ export class UserProfileComponent implements OnInit {
   userProfile: FormGroup;
   constructor(private router: Router, private userservice:UserService, private formBuilder:FormBuilder) { }
 
+  updateUser(){
+    this.router.navigate(['/user-landing/update-profile']);
+  }
+  updatePassword(){
+    this.router.navigate(['/user-landing/change-password']);
+  }
+
   ngOnInit() {
-    const id = localStorage.getItem('userId');
+    //const id = localStorage.getItem('userId');
+    const id = sessionStorage.getItem('userId');
   this.userservice.getUserById(+id).subscribe(data=> {
     this.user=data;
   });
@@ -28,16 +36,6 @@ export class UserProfileComponent implements OnInit {
       password: [this.user.password]
     });
   
-    // if (+id > 0) {
-    //   this.userservice.getUserById(+id).subscribe(user => {
-    //     this.userProfile.patchValue(user);
-    //   });
-    // }
   }
-  updateTheUser() {
-  
-      this.router.navigate(['user-update'])
-  
-  }
-
+ 
 }

@@ -26,9 +26,10 @@ public class User implements Serializable{
 	private String username;
 	private String password;
 	private boolean enabled;
+	private String userType="ROLE_USER";
 	
-	@Transient
-    String regStatus;
+//	@Transient
+//    String regStatus;
 	
 	
 	public User()
@@ -37,9 +38,8 @@ public class User implements Serializable{
 	}
 
 
-	
-
-	public User(Integer id, String name, String email, long phone, String username, String password, boolean enabled) {
+	public User(Integer id, String name, String email, long phone, String username, String password, boolean enabled,
+			String userType) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -48,9 +48,9 @@ public class User implements Serializable{
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
+		this.userType = userType;
+
 	}
-
-
 
 
 	public Integer getId() {
@@ -112,14 +112,10 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	
-	
 
 	public boolean isEnabled() {
 		return enabled;
 	}
-
-
 
 
 	public void setEnabled(boolean enabled) {
@@ -127,24 +123,22 @@ public class User implements Serializable{
 	}
 
 
-
-
-	public String getRegStatus() {
-		return regStatus;
+	public String getUserType() {
+		return userType;
 	}
 
 
-	public void setRegStatus(String regStatus) {
-		this.regStatus = regStatus;
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", username=" + username
-				+ ", password=" + password + "]";
+				+ ", password=" + password + ", enabled=" + enabled + ", userType=" + userType + "]";
 	}
-	
+
 	
 	
 	

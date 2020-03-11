@@ -28,9 +28,9 @@ SignupForm :FormGroup
 addUser()
 {
   this.userService.saveUser(this.SignupForm.value).subscribe( data =>{
-    console.log("User inserted Successfully")
-    console.log('registration status '+ data.regStatus)
-    this.router.navigate(['/admin-home'])
+   // console.log("User inserted Successfully")
+    //console.log('registration status '+ data.regStatus)
+    this.router.navigate(['/activate'])
   });
   }
 

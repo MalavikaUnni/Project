@@ -19,7 +19,8 @@
               </select>
            </div>
           <div class="text-center"><br>
-            <button class="btn btn-dark btn-block" (click)="compareTheCompany()" [disabled]="!comparecompany.valid">Compare</button>
+            <!-- <button class="btn btn-dark btn-block" (click)="compareTheCompany()" [disabled]="!comparecompany.valid">Compare</button> -->
+            <a [routerLink]="['/user-landing/charts']" class="text-info font-weight-bold size-font">Compare </a> 
           </div>
           </form>
 </div>

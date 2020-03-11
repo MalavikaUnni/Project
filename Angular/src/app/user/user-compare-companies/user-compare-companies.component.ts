@@ -23,7 +23,7 @@ export class UserCompareCompaniesComponent implements OnInit {
     });
     this.companyservice.getAllCompany().subscribe(data => {
       this.companyList = data;
-      console.log(this.companyList)
+     // console.log(this.companyList)
     });
   }
 

@@ -1,6 +1,11 @@
 package com.cts.project.userservice;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
+import java.util.NoSuchElementException;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,10 +33,36 @@ public class UserRestController {
 	@Autowired
 	UserService userService;
 	
-	/*
-	 * @Autowired JavaMailSender jms;
-	 */
-
+	
+	@GetMapping("/login")
+	public ResponseEntity<?> login(HttpServletRequest request) {
+		
+		String authorization =request.getHeader("Authorization");
+		logger.info("Login attempt with tooken--> {}",authorization);
+		String username=null;
+		String password=null;
+		if(authorization!=null && authorization.startsWith("Basic")) {
+			String base64Credentials=authorization.substring("Basic".length()).trim();
+			byte[] credDecoded=Base64.getDecoder().decode(base64Credentials);
+			String credentials=new String(credDecoded,StandardCharsets.UTF_8);
+			username=credentials.split(":")[0];
+			password=credentials.split(":")[1];
+			
+		}
+		
+		try {
+			UserDTO user=userService.getUserByUsernameAndPassword(username,password);
+			logger.info("User Logged in Using Username--> {}",username);
+			return new ResponseEntity<UserDTO>(user,HttpStatus.OK);
+		}
+		catch(Exception e) {
+				System.out.println(e.getStackTrace());
+				logger.info("Unauthorized Access --->{}",e.getStackTrace().toString());
+				return new ResponseEntity<String>("No user found",HttpStatus.BAD_REQUEST);
+		}
+		
+	}
+	
 	@GetMapping("/user")
 	//public List<UserDTO> getUsers() {
 	    public ResponseEntity<?> getUsers() {
@@ -49,36 +80,49 @@ public class UserRestController {
 		//return userService.getAllUsers();
 	}
 
-	@GetMapping("/user/{id}")
-	public UserDTO getUserById(@PathVariable("id") int id) {
-		//Optional<User> userList = userDao.findById(id);
-		//User user = userList.get();
-		return userService.getUserById(id);
-
+	
+	
+	@GetMapping(value = "/user/{id}")
+	public ResponseEntity<?> getUserById(@PathVariable("id") int id) {
+		try {
+			UserDTO user = userService.getUserById(id);
+			return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<String>("No such user found\n" + e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
-
-	@PostMapping("/user")
-	public UserDTO saveUser(@RequestBody UserDTO userDTO) {
-		return userService.saveUser(userDTO);
-	}
-
-	@DeleteMapping("/user/{id}")
-	public void deleteUser(@PathVariable int id) {
-		userService.deleteUser(id);
-	}
-
-	@PutMapping("/user")
-	public UserDTO updateUser(@RequestBody UserDTO userDTO) {
 		
-		return userService.updateUser(userDTO);
+	
+	@PostMapping(value = "/usersignup")
+	public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO user) {
+		return new ResponseEntity<UserDTO>(userService.saveUser(user), HttpStatus.OK);
 	}
 	
-	
-	
-	@PutMapping(value="/activate")
-	public boolean activateUser(@RequestBody String email) {
-	
-		return userService.activateUser(email);
-	}
 
+	@DeleteMapping(value = "/user/{id}")
+	public ResponseEntity<?> deleteUser(@PathVariable int id) {
+		try {
+			userService.deleteUser(id);
+			return new ResponseEntity<String>(HttpStatus.NO_CONTENT);
+		} catch (IllegalArgumentException e) {
+			return new ResponseEntity<String>("No such user found", HttpStatus.BAD_REQUEST);
+		}
+	}
+		
+	@PutMapping(value = "/user")
+	public ResponseEntity<?> updateUser(@RequestBody UserDTO user) {
+		return new ResponseEntity<UserDTO>(userService.updateUser(user), HttpStatus.OK);
+	}
+	
+
+	@GetMapping(value = "/user/activate/{email}")
+	public ResponseEntity<?> activateUser(@PathVariable String email) {
+		try {
+			boolean status = userService.activateUser(email);
+			return new ResponseEntity<Boolean>(status, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<String>("No such email assigned to user", HttpStatus.BAD_REQUEST);
+		}
+	}
+	
 }

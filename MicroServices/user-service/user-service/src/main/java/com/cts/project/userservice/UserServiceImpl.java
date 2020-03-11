@@ -2,9 +2,13 @@ package com.cts.project.userservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +22,8 @@ import com.cts.project.userservice.UserDTO;
 import com.cts.project.userservice.UserRepo;
 import com.cts.project.userservice.UserService;
 
+
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -28,6 +34,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	JavaMailSender jms;
 	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
 	public List<UserDTO> getAllUsers() {
@@ -54,14 +61,16 @@ public class UserServiceImpl implements UserService {
 	public UserDTO saveUser(UserDTO user) {
 		User newUser=new User();
 		BeanUtils.copyProperties(user, newUser);
-		User users=userRepo.save(newUser);
+		newUser.setUserType("ROLE_USER");
+		newUser=userRepo.save(newUser);
+		logger.info("Email to --> {}",newUser.getEmail());
 		
 		
 			try {
 				MimeMessage mimeMessage=jms.createMimeMessage();
 				MimeMessageHelper helper=new MimeMessageHelper(mimeMessage,"utf-8");
 				helper.setFrom("babymol.bobby@gmail.com");
-				helper.setTo(users.getEmail());
+				helper.setTo(newUser.getEmail());
 				helper.setSubject("Thaank You for Joining StockCharts");
 				helper.setText("Account created click on <a href='http://localhost:4200/activate?"+newUser.getEmail()+"'> Click </a>");
 				jms.send(mimeMessage);			
@@ -69,7 +78,7 @@ public class UserServiceImpl implements UserService {
 		   catch (Exception e) {
 				e.printStackTrace();
 			}
-		BeanUtils.copyProperties(users, user);
+		BeanUtils.copyProperties(newUser, user);
 		return user;
 	}
 
@@ -90,6 +99,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean activateUser(String email) {
 		User user=userRepo.findByEmail(email);
+		logger.info("Email--> {}",email);;
 		if(!user.isEnabled()) {
 			user.setEnabled(true);
 			userRepo.save(user);
@@ -98,5 +108,18 @@ public class UserServiceImpl implements UserService {
 		else
 		return false;
 	}
+
+	@Override
+	public UserDTO getUserByUsernameAndPassword(String username, String password) throws NoSuchElementException{
+
+		User user = userRepo.findByUsernameAndPassword(username, password).get();
+		UserDTO userDTO = new UserDTO();
+		BeanUtils.copyProperties(user, userDTO);
+		return userDTO;
+	
+		
+	}
+	
+	
 
 }

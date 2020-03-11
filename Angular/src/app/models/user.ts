@@ -7,5 +7,5 @@ export class User{
     password:string;
     enabled:boolean;
     regStatus:string;
-
+    userType:string;
 }

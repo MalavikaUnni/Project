@@ -13,6 +13,7 @@ public interface UserService {
 	public void deleteUser(int id);
 	public UserDTO updateUser(UserDTO UserDTO);
 	public boolean activateUser(String email);
+	public UserDTO getUserByUsernameAndPassword(String username, String password);
 	
 	
 	
