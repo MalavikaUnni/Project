@@ -1,0 +1,38 @@
+<!-- <div class="jumbotron"> -->
+    <main>
+    <div class="container">
+      <h3 class="display-4 text-center font-weight-bold text-muted"><b>Add IPO</b></h3>
+      <form class=" w-50 container p-5 rounded card" [formGroup]="addIpoForm" >
+                
+                <div class="form-group text-muted">
+                    <label for="companyName">Company Name</label>
+                    <input class="form-control" formControlName="companyName" type="text" id="companyName" placeholder="Enter Company name">
+                </div>
+                <div class="form-group text-muted" >
+                   <label for="stockExchange">Stock Exchange</label>
+                    <input class="form-control" formControlName="stockExchange" type="text" id="stockExchange" placeholder="Enter stock exchange">
+                </div>
+                <div class="form-group text-muted">
+                    <label for="pricePerShare">Price Share</label>
+                    <input class="form-control" formControlName="pricePerShare" type="number" id="pricePerShare" placeholder="Enter PriceShare ">
+                </div>
+                <div class="form-group text-muted">
+                    <label for="noOfShares">Number Of Shares</label>
+                    <input class="form-control" formControlName="noOfShares" type="number" id="noOfShares" placeholder="Enter No of Shares ">
+                </div>
+            
+                <div class="form-group text-muted">
+                    <label for="openDateTime">Date</label>
+                    <input class="form-control" formControlName="openDateTime" type="date" id="openDateTime" placeholder="Enter date">
+                </div>
+
+                <div class="form-group text-muted">
+                    <label for="remarks">Remarks</label>
+                    <input class="form-control" formControlName="remarks" type="text" id="remarks" placeholder="Enter address">
+                </div>
+                <button class="btn  btn-info border-white text-white" (click)="addIpo()" [disabled]="!addIpoForm.valid">Add</button>
+                
+            </form>
+    </div>
+    <!-- </div> -->
+</main>

@@ -1,0 +1,40 @@
+<main>
+    <nav class="navbar navbar-expand-md navbar-dark">
+
+        <button type="button" class="navbar-toggler mr-auto" data-toggle="collapse" data-target="#navbar2">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto bg-secondary" id="navbar2">
+            <ul class="navbar-nav  text-light justify-content-around w-100 text-center ">
+
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./user-profile']" class="nav-link text-info "><i class="fa fa-user fa-lg"
+                            aria-hidden="true"></i>View Profile &nbsp;</a>
+                </li>
+
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./user-compare-companies']" class="nav-link text-info "><i class="fa fa-building fa-lg" 
+                        aria-hidden="true"></i>
+                        Compare Companies &nbsp;</a>
+                </li>
+                <!-- <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./user-compare-sectors']" class="nav-link text-dark"><i class="fa fa-user-plus fa-lg"
+                            aria-hidden="true"></i>Compare Sectors &nbsp;</a>
+                </li> -->
+               
+
+
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-ipos']" class="nav-link text-info "><i
+                        class="fas fa-signal fa-lg"></i>List IPO &nbsp;</a>
+                </li>
+                
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['home']" class="nav-link font-weight-bold  text-danger btn border-light" (click)="logout()"><i class="fa fa-sign-out text-info" aria-hidden="true"></i>LogOut</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+</main>

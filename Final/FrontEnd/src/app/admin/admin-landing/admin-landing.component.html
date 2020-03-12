@@ -1,0 +1,41 @@
+<main>
+    <nav class="navbar navbar-expand-md navbar-light">
+
+        <button type="button" class="navbar-toggler mr-auto" data-toggle="collapse" data-target="#navbar2">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto bg-secondary" id="navbar2">
+            <ul class="navbar-nav  text-center justify-content-around w-100 ">
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./users']" class="nav-link text-info "><i class="fa  fa-users fa-lg"
+                            aria-hidden="true"></i>ManageUser &nbsp;</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./import-data']" class="nav-link text-info"><i class="fa fa-upload fa-lg"
+                            aria-hidden="true"></i>Import Data &nbsp;</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./company']" class="nav-link text-info "><i class="fa fa-building fa-lg"
+                            aria-hidden="true"></i>Manage Company &nbsp;</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-ipo']" class="nav-link text-info"><i class="fa fa-signal fa-lg"
+                            aria-hidden="true"></i>Manage IPO</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-exchange']" class="nav-link text-info"><i class="fa fa-suitcase fa-lg"
+                            aria-hidden="true"></i>Manage Exchange</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['./list-stock-price']" class="nav-link text-info"><i class="fa fa-id-card fa-lg"
+                            aria-hidden="true"></i>Manage StockPrice</a>
+                </li>
+                <li class="nav-item font-weight-bold text-dark">
+                    <a [routerLink]="['home']" class="nav-link text-danger btn border-light" (click)="logout()">LogOut</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+</main>

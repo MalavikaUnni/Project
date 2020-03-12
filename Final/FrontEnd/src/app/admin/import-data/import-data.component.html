@@ -1,0 +1,24 @@
+<main>
+
+    <div class="row">
+        <div class="jumbotron col-12 col-md-8 offset-md-2 jumbotron-fluid  bg-transparent ">
+            <div class="card  shadow text-dark bg-transparent mb-3">
+              <p class="h4 card-header text-dark">Import Excel File</p>
+              <div class="card-body bg-light">
+            
+                  <p class="card-text shadow">Select File to be uploaded:&nbsp;</p>
+                  <div class="input-group mb-3">
+                      <div class="custom-file">
+                          <input type="file" name="excelFileUpload" (change)="onFileChange($event)" class="custom-file-input" id="inputGroupFile">
+                          <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append text-center">
+                          <span class="input-group-text btn-dark" (click)="uploadData()" id="inputGroupFileAddon" type="button">Upload
+                          </span>
+                      </div>
+                  </div>
+                 </div>
+                </div>
+        </div>
+    </div>            
+</main>

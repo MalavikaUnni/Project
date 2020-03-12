@@ -1,0 +1,25 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "companyname": "Cognizant",
+      "city": "Kochi",
+      "turnover": 3456564,
+      "ceo": "aaa"
+    },
+    {
+      "id": 2,
+      "companyname": "Tata Consultancy",
+      "city": "Pune",
+      "turnover": 986544,
+      "ceo": "bbb"
+    },
+    {
+      "id": 3,
+      "companyname": "Infosys",
+      "city": "Mysore",
+      "turnover": 2132143,
+      "ceo": "hameem"
+    }
+  ]
+}

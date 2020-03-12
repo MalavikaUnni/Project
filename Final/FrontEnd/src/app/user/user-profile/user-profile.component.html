@@ -1,0 +1,21 @@
+<main>
+    
+
+
+
+    <div class="row justify-content-center ">
+      <div class="w-auto border bg-light p-3 col-md-4 shadow rounded h-50 my-5" *ngIf="user">
+          <h4 class="text-center display-4"><i class="fa fa-user text-info">{{user.name}} </i></h4>
+          <h5 class="text-center "><b>UserName :</b> {{user.username}}</h5>
+          <h5 class="text-center"><b>Email  :</b> {{user.email}}</h5>
+          <h5 class="text-center"><b> Phone  :</b>{{user.phone}}</h5>
+          <a class="btn btn-dark btn-lg btn-block mt-3 mb-3 text-light" (click)="updateUser()"><i class="fas fa-user-edit fa-lg"></i></a>
+          <a class="btn btn-dark btn-lg btn-block mt-3 mb-3 text-light"  (click)="updatePassword()">Change My Password</a>
+      </div>
+      </div>
+
+
+
+
+
+</main>

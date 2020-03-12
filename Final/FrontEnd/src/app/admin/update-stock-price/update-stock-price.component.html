@@ -1,0 +1,45 @@
+
+<!-- <div class="jumbotron jumbotron-fluid"> -->
+    <main>
+    <div class="container ">
+        <h3 class="display-4 text-center font-weight-bold text-muted">Update Stock Price</h3>
+        <form class=" w-50 container  p-5 rounded card" [formGroup]="updateStockForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input class="form-control" formControlName="id" type="number" id="id" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="companyCode">Company Code</label>
+                <input class="form-control" formControlName="companyCode" type="number" id="companyCode"
+                    placeholder="Enter Company code">
+            </div>
+            <div class="form-group">
+                <label for="stockExchange">Stock Exchange</label>
+                <input class="form-control" formControlName="stockExchange" type="text" id="stockExchange"
+                    placeholder="Enter stockExchange">
+            </div>
+
+            <div class="form-group">
+                <label for="currentPrice">Current Price</label>
+                <input class="form-control" formControlName="currentPrice" type="number" id="currentPrice"
+                    placeholder="Enter Current Price">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input class="form-control" formControlName="date" type="date" id="date" placeholder="Enter Date">
+            </div>
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input class="form-control" formControlName="time" type="time" id="time" placeholder="Enter time">
+            </div>
+
+            <button class="btn btn-dark" (click)="updateStockPrice()" [disabled]="!updateStockForm.valid">Update
+                StockPrice</button>
+
+        </form>
+    </div>
+    </main>
+<!-- </div> -->
