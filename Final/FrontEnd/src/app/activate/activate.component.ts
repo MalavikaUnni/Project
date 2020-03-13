@@ -20,9 +20,9 @@ export class ActivateComponent implements OnInit {
     var strarr = urlad.split("?")
     var str = strarr[1];
     var e=str.substr(0,str.length-1)
-    alert(e + "Outside")
+    //alert(e + "Outside")
     this.userService.serviceActivation(e).subscribe(u=>{
-      alert(e = "Inside")
+      //alert(e = "Inside")
       if(u){
         this.msg="User Activated Successfully";
       }

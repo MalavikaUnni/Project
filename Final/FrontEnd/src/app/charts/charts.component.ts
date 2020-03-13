@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { StockPriceService } from '../service/stock-price.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-charts',
@@ -8,38 +10,59 @@ import * as Highcharts from 'highcharts';
 })
 export class ChartsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-
-  title = 'myHighchart';
-   
-    data = [{
-            name: 'cognizant',
-            data: [500, 700, 555, 444, 777, 877, 944, 567, 666, 789, 456, 654]
-         },{
-            name: 'infosys',
-            data: [677, 455, 677, 877, 455, 778, 888, 567, 785, 488, 567, 654]
-         }];
-   
-    highcharts = Highcharts;
-    chartOptions = {   
-      chart: {
-         type: "column"
-      },
-      title: {
-         text: "Monthly Site Visitor"
-      },
-      xAxis:{
-         categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-      },
-      yAxis: {          
-         title:{
-            text:"StockPrice"
-         } 
-      },
-      series: this.data
-    };
-}
+   compareData:any;
+   constructor(private stockPriceService: StockPriceService, private route: ActivatedRoute) { }
+   chartOne = Highcharts;
+   chartOneOptions: any;
+   getFirstDataComplete: boolean = false;
+   getSecondDataComplete: boolean = false;
+   ngOnInit() {
+       this.compareData = JSON.parse(this.route.snapshot.queryParams.formData);
+       let series: any = []
+           let categories: any[] = [];
+           this.stockPriceService.getCompanyStockPricesBetween(this.compareData.companyName1, this.compareData.selectStock, this.compareData.from_period, this.compareData.to_period).subscribe(data => {
+               let companyOneData: any[] = [];
+               data.forEach((stockPrice) => {
+                   categories.push(stockPrice.dataPoint);
+                   companyOneData.push(stockPrice.dataValue)
+               })
+               let seriesDataMemberOne = {
+                   name: this.compareData.companyName1 + " (" + this.compareData.selectStock + ")",
+                   data: companyOneData
+               }
+               series[0] = seriesDataMemberOne;
+               this.getFirstDataComplete = true;
+           });
+           this.stockPriceService.getCompanyStockPricesBetween(this.compareData.companyName2, this.compareData.selectStock,this.compareData.from_period, this.compareData.to_period).subscribe(data => {
+               let companyTwoData: any[] = [];
+               data.forEach((stockPrice) => {
+                   if (categories.includes(stockPrice.dataPoint)) {
+                       companyTwoData.push(stockPrice.dataValue)
+                   }
+               })
+               let seriesDataMemberTwo = {
+                   name: this.compareData.companyName2 + " (" + this.compareData.selectStock + ")",
+                   data: companyTwoData
+               }
+               series[1] = seriesDataMemberTwo;
+               this.getSecondDataComplete = true;
+           });
+           this.chartOneOptions = {
+               chart: {
+                   type: "column"
+               },
+               title: {
+                   text: "Stock Comparision Chart"
+               },
+               xAxis: {
+                   categories: categories
+               },
+               yAxis: {
+                   title: {
+                       text: "Stock Price"
+                   }
+               },
+               series: series
+           }
+       }
+      }

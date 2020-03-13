@@ -21,7 +21,8 @@ export class CompanyUpdateComponent implements OnInit {
       name:['',Validators.required],
       city:['',Validators.required],
       turnOver:['',Validators.required],
-      ceoName:['',Validators.required]
+      ceoName:['',Validators.required],
+      code:['',Validators.required]
     });
     const id=localStorage.getItem('companyId');
     if(+id > 0) {

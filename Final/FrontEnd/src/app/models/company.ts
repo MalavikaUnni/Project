@@ -5,5 +5,6 @@ export class Company{
     sector:string;
     turnover:number;
     ceo:string;
+    code:string;
 
 }

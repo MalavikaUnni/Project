@@ -19,7 +19,8 @@ AddCompanyForm :FormGroup
           city:['',Validators.required],
           turnOver:['',Validators.required],
           sector:['',Validators.required],
-          ceoName :['',Validators.required]
+          ceoName :['',Validators.required],
+          code:['',Validators.required]
     
       });
     

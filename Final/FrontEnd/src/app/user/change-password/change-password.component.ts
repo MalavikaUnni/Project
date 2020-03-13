@@ -30,7 +30,7 @@ export class ChangePasswordComponent implements OnInit {
           u.password=pass;
           this.userService.updateUserInfo(u).subscribe(us=>{
             alert("password changed successfully")
-            this.router.navigate(['/logout'])
+            this.router.navigate(['sign-up'])
           })
         }
       }else{

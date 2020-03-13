@@ -39,7 +39,7 @@ onSubmit() {
   
   //console.log(this.SignupForm.value);
   alert("Please Verify Your Email")
-    this.router.navigate(['/activate'])
+    this.router.navigate(['/home'])
 
   //this.router.navigate(['/admin-home'])
 }

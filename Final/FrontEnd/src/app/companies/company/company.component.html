@@ -10,6 +10,7 @@
         <th>sector</th>
         <th>TURNOVER</th>
         <th>CEO</th>
+        <th>Company Code</th>
         <th>ACTIONS</th>
     </tr>
     <tr *ngFor="let company of companies">
@@ -19,6 +20,7 @@
         <td>{{company.sector}}</td>
         <td>{{company.turnOver}}</td>
         <td>{{company.ceoName}}</td>
+        <td>{{company.code}}</td>
         <td><button class="btn btn-danger" (click)="deleteCompany(company)">Delete</button>
         <button class="btn btn-dark" (click) ="updateCompany(company)">Update</button>
     
